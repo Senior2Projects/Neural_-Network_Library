@@ -36,9 +36,6 @@ class Network:
             if verbose and epoch % 500 == 0:
                 print(f"Epoch {epoch}, Loss: {loss:.6f}")
 
-    def predict(self, X):
-        return self.forward(X)
-
     def summary(self):
         """Print architecture and shapes of learned parameters."""
         print("\nNetwork Architecture:")

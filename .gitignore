@@ -197,3 +197,10 @@ data/
 datasets/
 *.gz
 *.zip
+
+tf_env/
+venv/
+env/
+.venv/
+__pycache__/
+*.pyc
