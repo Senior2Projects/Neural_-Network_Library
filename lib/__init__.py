@@ -1,3 +1,5 @@
+# Exposes essential components of the library so they can be imported directly
+
 from .layers import Dense
 from .activations import ReLU, Sigmoid, Tanh, Softmax
 from .losses import MSE
