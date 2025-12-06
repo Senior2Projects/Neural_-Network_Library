@@ -85,4 +85,5 @@ To prove the library's capability to learn non-linear boundaries, we solve the c
 ├── notebooks/
 │   └── project_demo.ipynb  # Primary Demo (Gradient Check & XOR)
 └── report/
+    └── ms1_report.pdf      # Milestone 1 Report
     └── project_report.pdf  # Final Technical Report
