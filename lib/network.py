@@ -48,3 +48,28 @@ class Network:
             else:
                 print(f"Layer {i}: {layer_name}")
         print("=" * 50)
+
+    def print_final_predictions(self, X, y):
+        """Prints input target prediction table after training."""
+        print("\nFinal model predictions:")
+        print("=" * 60)
+
+        preds = self.forward(X)
+
+        print(f"{'Input (x1,x2)':<20} {'Target':<10} {'Predicted':<12} {'Error':<10}")
+        print("-" * 60)
+
+        for i in range(len(X)):
+            x1, x2 = X[i]
+            target = y[i][0]
+            pred = preds[i][0]
+            error = abs(target - pred)
+
+            status = "✓" if error < 0.1 else "✗"
+
+            print(f"({x1:>2}, {x2:>2})".ljust(20),
+                f"{target:+.4f}".ljust(10),
+                f"{pred:+.4f}".ljust(12),
+                f"{error:.4f}  {status}")
+
+        print("-" * 60)
