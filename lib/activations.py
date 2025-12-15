@@ -4,12 +4,16 @@ from .layers import Layer
 class Sigmoid(Layer):
     # Forward pass: standard sigmoid activation
     def forward(self, x):
-        self.out = 1 / (1 + np.exp(-x))
+        self.out = np.where(
+            x >= 0,
+            1.0 / (1.0 + np.exp(-x)),
+            np.exp(x) / (1.0 + np.exp(x))
+        )
         return self.out
 
     # Backward pass: derivative of sigmoid = s*(1-s)
     def backward(self, grad_output):
-        return grad_output * self.out * (1 - self.out)
+        return grad_output * self.out * (1.0 - self.out)
 
 
 class Tanh(Layer):
