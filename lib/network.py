@@ -1,5 +1,4 @@
 import numpy as np
-
 class Network:
     """Container class: holds layers, performs forward/backward passes, training."""
 
@@ -65,6 +64,10 @@ class Network:
             # Print every 500 epochs
             if verbose and epoch % 500 == 0:
                 print(f"Epoch {epoch}, Loss: {loss:.6f}")
+                #i want to see the epoch no 1000 loss too
+        if verbose:
+            print(f"Epoch {epochs-1}, Loss: {loss:.6f}")
+            
 
     def summary(self):
         """Print architecture and shapes of learned parameters."""
@@ -103,3 +106,4 @@ class Network:
                 f"{error:.4f}  {status}")
 
         print("-" * 60)
+    

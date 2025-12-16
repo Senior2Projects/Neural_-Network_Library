@@ -18,7 +18,7 @@ class Sigmoid(Layer):
 
     # Backward pass: derivative of sigmoid = s*(1-s)
     def backward(self, grad_output):
-        return grad_output * self.out * (1 - self.out)
+        return grad_output * self.out * (1.0 - self.out)
 
 
 class Tanh(Layer):
